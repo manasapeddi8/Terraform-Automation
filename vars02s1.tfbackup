@@ -1,0 +1,46 @@
+provider "azurerm" {
+  features {}
+}
+
+terraform {
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "~> 2.46.0"
+    }
+  }
+  required_version = "~> 0.15"
+}
+
+variable "rg1" {
+  default     = "lab02-rg1"
+  type        = string
+  description = "This is resource group 1"
+}
+variable "location" {
+  default = "canadacentral"
+}
+variable "vnet" {
+  default = "lab02-vnet"
+}
+variable "vnet-address" {
+  default = ["10.0.0.0/16"]
+}
+variable "subnet1" {
+  default = "lab02-subnet1"
+}
+variable "subnet1-address" {
+  default = ["10.0.1.0/24"]
+}
+variable "subnet2" {
+  default = "lab02-subnet2"
+}
+variable "subnet2-address" {
+  default = ["10.0.2.0/24"]
+}
+variable "nsg1" {
+  default = "lab02-nsg1"
+}
+variable "nsg2" {
+  default = "lab02-nsg2"
+}

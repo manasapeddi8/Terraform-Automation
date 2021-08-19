@@ -1,0 +1,91 @@
+variable "linuxVM1" {
+  default = "lab02s2-db1-u-vm1"
+}
+
+variable "linuxVM1_size" {
+  default = "Standard_B1s"
+}
+variable "linuxVM1_user" {
+  default = "auto"
+}
+variable "linuxVM1_public_key" {
+  default = "/home/auto/.ssh/id_rsa.pub"
+}
+
+variable "avs" {
+  default = "linux_avs"
+}
+variable "win_avs" {
+  default = "windows_avs"
+}
+variable "win_user" {
+  default = "winadm"
+}
+variable "win_user_pwd" {
+  default = "Witor!23"
+}
+variable "win_vm_count" {
+  default = "1"
+}
+variable "vm_count" {
+  default = "2"
+}
+variable "winVM_disk_attr" {
+  type = map(string)
+  default = {
+    disk_type  = "StandardSSD_LRS"
+    disk_size  = "127"
+    disk_cache = "ReadWrite"
+  }
+}
+
+variable "winVM_OS" {
+  type = map(string)
+  default = {
+    os_pub   = "MicrosoftWindowsServer"
+    os_offer = "WindowsServer"
+    os_sku   = "2016-DataCenter"
+    os_ver   = "latest"
+  }
+}
+variable "windows_name" {
+  type = map(string)
+  default = {
+    lab-web-w-vm1 = "Standard_B1s"
+  }
+}
+
+variable "linuxVM1_disk_type" {
+
+  default = "Premium_LRS"
+}
+variable "linuxVM1_disk_size" {
+  default = "32"
+}
+variable "linuxVM1_disk_cache" {
+  default = "ReadWrite"
+}
+
+
+variable "linuxVM1_linuxOS_pub" {
+  default = "Canonical"
+}
+variable "linuxVM1_linuxOS_offer" {
+  default = "UbuntuServer"
+}
+variable "linuxVM1_linuxOS_sku" {
+  default = "19.04"
+}
+variable "linuxVM1_linuxOS_ver" {
+  default = "latest"
+}
+
+locals {
+  info = {
+    Name         = "Terraform-Class"
+    Project      = "Learning"
+    ContactEmail = "manasa.peddi8x@gmail.com"
+    Environment  = "Lab"
+  }
+}
+
